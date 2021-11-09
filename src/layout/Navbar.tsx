@@ -45,8 +45,8 @@ export default function Navbar() {
           </Grid>
           <Grid item style={{ marginLeft: 24 }}>
             <Grid container direction='column'>
-              <Typography variant='h3' align='left' style={{ color: "white", fontSize: 40, fontWeight: 100 }}>WEB TRIEU DAI</Typography>
-              <Typography variant='h5' align='left' style={{ color: "white", fontSize: 16, fontWeight: 400 }}>English</Typography>
+              <Typography variant='h3' align='left' style={{ color: "white", fontSize: 40, fontWeight: 100 }}>Bảo Tàng Lịch Sử Các Triều Đại Việt Nam</Typography>
+              <Typography variant='h5' align='left' style={{ color: "white", fontSize: 16, fontWeight: 400 }}>The Museum of Vietnamese Ancient Dynasties</Typography>
             </Grid>
           </Grid>
         </Grid>

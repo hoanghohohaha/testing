@@ -45,17 +45,17 @@ export default function MissionSection() {
       backgroundImage: `url("${selectedImage?.image}")`,
     }}>
       <div style={{ backgroundColor: "rgba(36,39,44,0.8)" }}>
-        <Grid container justifyContent='space-evenly' style={{ width: "100%", height: 700, padding: '48px 0' }} alignItems='center'>
+        <Grid container justifyContent='space-evenly' style={{ width: "80%", height: 700, margin: 'auto', padding: '48px 0' }} alignItems='center'>
           <Grid item xs={5}>
             <Grid container justifyContent='center' direction='column'>
               <Grid item style={{ marginTop: 24 }}>
-                <Typography variant='h3' style={{ fontWeight: 600, fontSize: 40, color: 'white' }}>Su Menh</Typography>
+                <Typography variant='h3' style={{ fontWeight: 600, fontSize: 40, color: 'white' }}>Sứ Mệnh</Typography>
               </Grid>
               <Grid item style={{ marginTop: 24 }}>
-                <Typography style={{ color: "white" }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur enim impedit, facere repellendus minus unde sapiente sit vitae. Rem eos omnis, nostrum autem architecto repellat libero repudiandae! Magnam, hic voluptatem.</Typography>
+                <Typography variant='h4' style={{ fontWeight: 200, color: "white" }}>Gìn giữ những giai thoại/ chính sử về các triều đại trong lịch sử dân tộc có thể sẽ biến mất không lâu sau này. </Typography>
               </Grid>
               <Grid item style={{ marginTop: 24 }}>
-                <Button variant='contained' style={{ boxShadow: "none", borderRadius: 0, padding: "8px 48px", background: "#C21212" }}><Typography style={{ color: "white" }}>LEARN MORE</Typography></Button>
+                <Button variant='contained' style={{ boxShadow: "none", borderRadius: 0, padding: "8px 48px", background: "#C21212" }}><Typography style={{ color: "white" }}>TÌM HIỂU THÊM</Typography></Button>
               </Grid>
             </Grid>
           </Grid>

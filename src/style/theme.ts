@@ -31,7 +31,7 @@ export const mainTheme = createTheme({
   },
   typography: {
     fontFamily: [
-      "MONTSERRAT",
+      "Raleway",
       "Roboto",
       "-apple-system",
       "BlinkMacSystemFont",

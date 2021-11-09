@@ -1,60 +1,32 @@
-import React, { useRef, useState } from 'react';
-import * as THREE from 'three';
-import { Canvas, MeshProps, ThreeEvent, useFrame } from "@react-three/fiber";
-import { softShadows, MeshWobbleMaterial, OrbitControls, } from "@react-three/drei";
-import { useSpring, animated } from "react-spring/three";
+import React, { Suspense } from 'react';
+import { Canvas } from "@react-three/fiber";
+import { softShadows, OrbitControls, } from "@react-three/drei";
+import Model from '../../static/Scene'
+import OldWomanModel from '../../static/Oldwoman';
+import YoungWomanModel from '../../static/Youngwoman';
+import WomanModel from '../../static/Woman';
 
 softShadows();
 
-const SpinningMesh = ({ position, color, speed, args }: any) => {
-  //ref to target the mesh
-  // const mesh = useRef()
-
-  const mesh = useRef<THREE.Mesh>(null!)
-  // useFrame((state, delta) => (if (ref.current) ref.current.rotation.x += 0.01))
-
-  //useFrame allows us to re-render/update rotation on each frame
-  useFrame(() => { if (mesh.current) { mesh.current.rotation.x = mesh.current.rotation.y += 0.01 } })
-
-  //Basic expand state
-  // const [expand, setExpand] = useState(false);
-  // // React spring expand animation
-  // const props = useSpring({
-  //   scale: expand ? [1.4, 1.4, 1.4] : [1, 1, 1],
-  // });
-
-  const [hovered, setHover] = useState(false)
-  const [active, setActive] = useState(false)
-
-  return (
-    <mesh
-      position={position}
-      scale={[1.5, 1.5, 1.5]}
-      onClick={e => setActive(!active)}
-      castShadow>
-      <boxBufferGeometry attach='geometry' args={args} />
-      {/* <MeshWobbleMaterial
-        visible
-        color={color}
-        speed={speed}
-        attach='material'
-        factor={0.6}
-      /> */}
-      <meshStandardMaterial attach="material" color={color} />
-    </mesh>
-  );
-};
-
-// function Model({ url }) {
-//   const gltf = useGLTFLoader(url, true);
-//   return <primitive object={gltf.scene} dispose={null} />;
-
-
 export default function HeroSection() {
+
   return (
     <>
       <Canvas style={{ height: '80vh', width: '100%', background: `#24272C` }}
         camera={{ position: [-5, 2, 10], fov: 60 }}>
+        <fog attach="fog" args={['black', 0, 20]} />
+        <Suspense fallback={null}>
+          <Model position={[0, 1, 5]} onClick={() => console.log("aaa")} onPointerEnter={() => console.log("sddd")} />
+        </Suspense>
+        <Suspense fallback={null}>
+          <OldWomanModel position={[0, 0, -2]} />
+        </Suspense>
+        <Suspense fallback={null}>
+          <WomanModel position={[-5, 0, 6]} scale={.6} />
+        </Suspense>
+        <Suspense fallback={null}>
+          <YoungWomanModel position={[5, 1, 5]} scale={.3} />
+        </Suspense>
         <ambientLight intensity={0.1} />
         {/* Our main source of light, also casting our shadow */}
         <directionalLight
@@ -83,19 +55,6 @@ export default function HeroSection() {
             <planeBufferGeometry attach='geometry' args={[100, 100]} />
             <shadowMaterial attach='material' opacity={0.3} />
           </mesh>
-          <mesh>
-            <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-            <meshStandardMaterial attach="material" color={'orange'} />
-          </mesh>
-          <SpinningMesh
-            position={[0, 0, 0]}
-            color='lightblue'
-            args={[3, 2, 1]}
-            speed={2}
-          />
-          <SpinningMesh position={[-2, 1, -5]} color='pink' speed={6} />
-          <SpinningMesh position={[5, 1, -2]} color='pink' speed={6} />
-          <SpinningMesh position={[-2, 1, 5]} color='pink' speed={6} />
         </group>
         <OrbitControls enableZoom={false} maxDistance={10} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2.5} autoRotate rotateSpeed={3} />
       </Canvas>

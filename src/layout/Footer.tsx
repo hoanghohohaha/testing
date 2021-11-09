@@ -8,21 +8,21 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function Footer() {
   return <>
-    <Grid container style={{ background: "#181D23", padding: "40px 24px 24px 24px" }} justifyContent='space-between' alignItems='center'>
-      <Grid item xs={4}>
+    <Grid container style={{ background: "#181D23", padding: "40px 24px 24px 24px" }} justifyContent='space-around' alignItems='center'>
+      <Grid item xs={4} style={{ marginLeft: -100 }}>
         <Grid container direction='column' alignItems='center' >
           <Avatar src='https://doagahehoc242.cloudfront.net/uploads/posts/801/082936ad_12072021-zoe-image-7.jpg' style={{ height: 80, width: 80 }} />
           <Grid>
             <Grid item>
-              <Typography style={{ color: "white" }} variant='h2'>WEB TRIEU DAI</Typography>
+              <Typography style={{ color: "white" }} variant='h2'>Bảo Tàng Lịch Sử Các Triều Đại Việt Nam</Typography>
             </Grid>
             <Grid item>
-              <Typography style={{ color: "white" }} variant='h5'>WEB TRIEU DAI ENGLISH</Typography>
+              <Typography style={{ color: "white" }} variant='h5'>The Museum of Vietnamese Ancient Dynasties</Typography>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={2}>
         <Grid container direction='column' alignItems='flex-start' justifyContent='flex-start'>
           <Grid item style={{ marginBottom: 24 }}>
             <Typography variant='h4' style={{ color: "white" }} ><b>Contact</b></Typography>
