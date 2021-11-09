@@ -16,7 +16,7 @@ export default function HeroSection() {
         camera={{ position: [-5, 2, 10], fov: 60 }}>
         <fog attach="fog" args={['black', 0, 20]} />
         <Suspense fallback={null}>
-          <Model position={[0, 1, 5]} onClick={() => console.log("aaa")} onPointerEnter={() => console.log("sddd")} />
+          <Model position={[0, 1, 5]} />
         </Suspense>
         <Suspense fallback={null}>
           <OldWomanModel position={[0, 0, -2]} />

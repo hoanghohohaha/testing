@@ -7,7 +7,7 @@ import MissionSection from '../../widgets/HomePage/Mission';
 function HomePage() {
   return (
     <div>
-      <HeroSection />
+      {/* <HeroSection /> */}
       <MissionSection />
       <Featured />
     </div>
